@@ -9,8 +9,8 @@
 <form method="POST" action="{{ url_for('result')  }}" id="calculator_form" enctype="multipart/form-data">
     <table class="calculator" >
         <tr>
-            <td colspan="3"><label for="result"></label><input class="display-box" type="text" name="result" id="result" disabled /> </td>
-            <td> <input type="button" value="C" onclick="clear()" id="btn1" /> </td>
+            <td colspan="3"><label for="result"></label><input class="display-box" type="text" name="result" id="result" /> </td>
+            <td> <input type="button" value="C" onclick="clear()" id="btn" /> </td>
         </tr>
         <tr>
             <td> <input type="button" value="1" onclick="display('1')" id="1" /> </td>
@@ -40,12 +40,12 @@
 </form>
 {% if success == True %}
     <br/>
-    <p>Previous Result: {{ result }}</p>
+    <p class="feedback">Previous Result: {{ result }}</p>
 {% endif %}
 {% if success == False %}
     <br/>
-    <p>Error message: {{ error }}</p>
-    <p>Please clear equation using the 'C' button.</p>
+    <p class="feedback">Error message: {{ error }}</p>
+    <p class="feedback">Remember: Your equation can only have ONE operand! This is a Simple Calculator!</p>
 {% endif %}
 <script type="text/javascript" src="../static/calc.js"></script>
 </body>

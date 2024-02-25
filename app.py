@@ -14,6 +14,7 @@ def result():
     try:
 
         equation = request.form['result']
+
         if "+" in equation:
             arr = equation.split("+", 1)
             result_processed = float(arr[0]) + float(arr[1])
